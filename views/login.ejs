@@ -1,0 +1,18 @@
+<%- include("header", {session: session} ) %>
+<h1><%= title %></h1>
+<form method="post" action="/login">
+    <label>Username:</label>
+    <input type="text" id="user" name="user"><br>
+    <label>Password:</label>
+    <input type="password" id="pass" name="pass">
+    <button type="submit">Submit</button>
+</form>
+    <% if (session.message) { %>
+        <p><%= session.message %></p>
+    <% } %>
+
+    <% if (session.error) { %>
+        <p><%= session.error %></p>
+    <% } %>
+
+<%- include("footer", {}) %>
